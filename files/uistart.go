@@ -7,7 +7,7 @@ import (
 func UIStart(filename string) {
 	ui.Clear()
 
-	netInfoMap := GetInfoMapMap(filename)
+	netInfoMap := getInfoMapMap(filename)
 
 	parsMap := make(map[string]*ui.Par, len(netInfoMap))
 	for k, v := range netInfoMap {
@@ -38,13 +38,7 @@ func UIStart(filename string) {
 	ui.Render(ui.Body)
 
 	ui.Handle("/timer/1s", func(e ui.Event) {
-		t := e.Data.(ui.EvtTimer)
-		i := t.Count
-		if i > 103 {
-			ui.StopLoop()
-			return
-		}
-		netInfoMap := GetInfoMapMap(filename)
+		netInfoMap := getInfoMapMap(filename)
 		ui.Clear()
 
 		parTime.Text = getTime()
@@ -56,6 +50,5 @@ func UIStart(filename string) {
 		}
 
 		ui.Render(ui.Body)
-
 	})
 }

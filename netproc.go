@@ -31,16 +31,5 @@ func main() {
 
 	files.UIStart(filename)
 
-	//switch file {
-	//case "netstat":
-	//	files.NetstatUIStart()
-	//case "snmp":
-	//	files.UIStart()
-	//}
-
 	ui.Loop()
-
-
-	fmt.Println(*f)
-
 }

@@ -2,7 +2,6 @@ package files
 
 import (
 	"fmt"
-	ui "github.com/gizak/termui"
 	"time"
 	"os"
 	"bufio"
@@ -30,13 +29,13 @@ func getTerminalSize() (high, length int) {
 	return high, length
 }
 
-func getPar(netInfo []netInfo) (parse string, lines int){
+func getPar(netInfo []netInfo) (string, int){
 	var _parser string
 	_, width := getTerminalSize()
 	width -=6
 	fmtStringLen := 0
 	total := 0
-	lines = 1
+	lines := 1
 
 	for _, v := range netInfo {
 		fmtString := fmt.Sprintf("%25s: %-10d", v.key, v.count)
@@ -67,45 +66,6 @@ func getTime() string {
 	return _parser
 }
 
-func GetP(netInfo []netInfo) *ui.Par{
-	hight, width := getTerminalSize()
-	width -=6
-	total := 0
-	fmtStringLen := 0
-	var _parser string
-
-	t := time.Now()
-	header := t.Format("2006-01-02 15:04:05")
-
-	headerFmt := fmt.Sprintf("[%%%ds\r\n](fg-yellow)", (width + len(header))/2)
-	_parser += fmt.Sprintf(headerFmt, header)
-
-	for _, v := range netInfo {
-		fmtString := fmt.Sprintf("%25s: %-10d", v.key, v.count)
-		fmtStringLen = len(fmtString)
-		total += fmtStringLen
-		if total > width {
-			_parser += "\r\n"
-			total = fmtStringLen
-		}
-		_parser += fmtString
-	}
-
-	p := ui.NewPar(_parser)
-	p.WrapLength = width-2 // this should be at least p.Width - 2
-	p.Height = hight
-	p.Width = width
-	p.Y = 0
-	p.X = 2
-	p.TextFgColor = ui.ColorGreen
-	p.BorderLabel = "TcpExt"
-	p.BorderFg = ui.ColorCyan
-	p.Border = true
-
-	return p
-}
-
-
 func isKey(text string) bool {
 	ret := false
 	_, err := strconv.Atoi(text)
@@ -133,8 +93,8 @@ func procText(texts string, infoArray []netInfo) []netInfo {
 	return infoArray
 }
 
-func GetInfoMapMap(filepath string) (map[string][]netInfo){
-	file, err := os.Open(filepath)
+func getInfoMapMap(file_path string) (map[string][]netInfo){
+	file, err := os.Open(file_path)
 	if err != nil {
 		log.Fatal(err)
 	}
