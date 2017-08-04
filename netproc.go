@@ -14,7 +14,7 @@ func main() {
 
 	filename := *f
 	if filename == "" {
-		fmt.Println("Specify the /proc/net/[file] first, currently support snmp, netstat ")
+		fmt.Println("Usage: netproc --file [snmp, netstat]")
 		return
 	}
 	filename = "/proc/net/" + filename
