@@ -13,3 +13,7 @@ go build netproc.go
 ./netproc --file snmp
 ./netproc --file netstat
 ```
+
+netproc runs like this:
+
+![Screenshot](img/Screenshot.png)
