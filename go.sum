@@ -8,3 +8,7 @@ github.com/mitchellh/go-wordwrap v0.0.0-20180828145344-9e67c67572bc h1:DDA3KMRLN
 github.com/mitchellh/go-wordwrap v0.0.0-20180828145344-9e67c67572bc/go.mod h1:ZXFpozHsX6DPmq2I0TCekCxypsnAUbP2oI0UX1GXzOo=
 github.com/nsf/termbox-go v0.0.0-20180819125858-b66b20ab708e h1:fvw0uluMptljaRKSU8459cJ4bmi3qUYyMs5kzpic2fY=
 github.com/nsf/termbox-go v0.0.0-20180819125858-b66b20ab708e/go.mod h1:IuKpRQcYE1Tfu+oAQqaLisqDeXgjyyltCfsaoYN18NQ=
+github.com/silenceshell/netproc v0.0.0-20170804062023-e47f21e8d622 h1:4C7tGr2OR4Ac5XgBEjzmLroYsz+HvKzPQC0xG09j4kM=
+github.com/silenceshell/netproc v0.0.0-20170804062023-e47f21e8d622/go.mod h1:LXM9+VWoH4EKeqDRHc5FjyFDpcDgbAMlZL2nk7KzmEw=
+github.com/spf13/pflag v1.0.2 h1:Fy0orTDgHdbnzHcsOgfCN4LtHf0ec3wwtiwJqwvf3Gc=
+github.com/spf13/pflag v1.0.2/go.mod h1:DYY7MBk1bdzusC3SYhjObp+wFpr4gzcvqqNjLnInEg4=
