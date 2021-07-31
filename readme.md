@@ -14,6 +14,8 @@ go build netproc.go
 ./netproc --file netstat
 ```
 
+press `q` to exit.
+
 netproc runs like this:
 
 ![Screenshot](img/Screenshot.png)
