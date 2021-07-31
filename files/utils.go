@@ -18,8 +18,8 @@ type netInfo struct {
 
 func getTerminalSize() (high, length int) {
 	cmd := exec.Command("stty", "size")
-  	cmd.Stdin = os.Stdin
-  	out, err := cmd.Output()
+	cmd.Stdin = os.Stdin
+	out, err := cmd.Output()
 	if err != nil {
 		high = 40
 		length = 80
